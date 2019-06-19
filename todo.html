@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+
+    <label>Todo</label>
+    <input type="text" id="todo" name="name" value="" required/>
+    <label>Date</label>
+    <input type="date" id="date" name="name" value="" required/>
+    <input type="submit" onclick="AppendTask()" name="name" value="Submit" />
+    
+
+    <table class=" table">
+        <tr>
+            <td>Todo</td>
+            <td>Date</td>
+            <td>Status</td>
+        </tr>
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
+
+
+    <script>
+    function Completed(e) {
+        e.target.setAttribute("disabled", "disabled");
+         e.target.parentElement.parentElement.setAttribute("style", "color: green; text-decoretion: line-through;");
+    }
+
+    function AppendTask() {
+        var todo = document.getElementById("todo").value;
+        var date = document.getElementById("date").value;
+        var checkbox = `<input type="checkbox" onclick="Completed(event)" name="name" value="" />`
+
+        var result = `<tr style="color: orange"><td>${todo}</td><td>${date}</td><td>${checkbox}</td></tr>`
+
+        document.getElementById("tbody").innerHTML += result;
+
+    }
+    </script>
+
+</body>
+</html>
