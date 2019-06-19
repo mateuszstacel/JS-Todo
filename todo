@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>TODO APP!</h1>
+    <label>ToDo</label>
+    <input type="text" id="toDo" name="todo" value="" />
+
+    <label>date</label>
+    <input type="date" id="date" name="date" value="" />
+
+    <button onclick="AppendToList()">Submit</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ToDo</th>
+                <th>Date</th>
+
+            </tr>
+        </thead>
+      <tbody id="tbody">
+
+      </tbody>
+    </table>
+    
+    <script>
+        function AppendToList() {
+            var todo = document.getElementById("toDo").value;
+
+            var date = document.getElementById("date").value;
+
+            var data = `<tr> <td> ${todo} </td> <td> ${date} </td> </tr>`;
+
+            return document.getElementById("tbody").innerHTML += data;
+
+         };
+
+    </script>
+</body>
+</html>
